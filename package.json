@@ -1,0 +1,65 @@
+{
+  "name": "rd-sa-connector",
+  "version": "0.1.0",
+  "description": "Secure TypeScript connector for rd-sa dashboard ingest APIs.",
+  "license": "MIT",
+  "author": "rdeeb",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdeeb/rd-sa-connector.git"
+  },
+  "homepage": "https://github.com/rdeeb/rd-sa-connector#readme",
+  "bugs": {
+    "url": "https://github.com/rdeeb/rd-sa-connector/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist coverage",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "coverage:changed": "node scripts/check-touched-coverage.js",
+    "check": "pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm coverage:changed && pnpm build",
+    "changeset": "changeset",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^24.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}

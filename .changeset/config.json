@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/changeset-config",
+  "changelog": false,
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}
